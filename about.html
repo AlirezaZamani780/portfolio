@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Me - Dynamic Typing</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #282a36;
+        color: #f8f8f2;
+        text-align: center;
+        padding: 50px;
+      }
+
+      .about-container {
+        margin-top: 50px;
+        font-size: 1.5rem;
+        color: #f8f8f2;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+      }
+
+      .typing-effect {
+        font-weight: bold;
+        display: inline-block;
+        border-right: 2px solid #f8f8f2; /* Cursor effect */
+        padding-right: 5px;
+        white-space: normal; /* Allow wrapping to next line */
+        overflow: hidden;
+        width: 0;
+        animation: typing 6s steps(60) 1s forwards,
+          blink 0.75s step-end infinite;
+        word-wrap: break-word; /* Ensures long words break into the next line */
+      }
+
+      @keyframes typing {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+
+      @keyframes blink {
+        50% {
+          border-color: transparent;
+        }
+      }
+    </style>
+  </head>
+  <body class="about-page">
+    </div>
+    <header>
+      <div class="logo">
+        <h1>Alireza Zamani</h1>
+        <p>Programmer & Code Lover</p>
+      </div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html" style="margin-right: 30px">Contact</a></li>
+          <li><a href="skills.html">Skills</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="about" class="about-section">
+      <h2>About Me</h2>
+      <p class="about-text"></p>
+      <span class="cursor">|</span>
+    </section>
+<script>
+
+</script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const aboutText ="Hi, I'm Alireza Zamani, a passionate programmer and code lover. I love working with code, learning new technologies, and solving problems."
+        let index = 0;
+        const speed = 50; // Typing speed (in milliseconds)
+
+        function typeEffect() {
+          if (index < aboutText.length) {
+            document.querySelector(".about-text").innerHTML +=
+              aboutText.charAt(index);
+            index++;
+            setTimeout(typeEffect, speed);
+          } else {
+            document.querySelector(".cursor").style.display = "none"; // Hide cursor when done
+          }
+        }
+
+        typeEffect();
+      });
+    </script>
+  </body>
+</html>

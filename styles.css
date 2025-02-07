@@ -1,0 +1,381 @@
+/* Dracula Theme Colors */
+:root {
+    --background: #1e1f29; /* Darker Background */
+    --foreground: #f8f8f2; /* Light Text */
+    --primary: #ff79c6; /* Pink */
+    --secondary: #bd93f9; /* Purple */
+    --accent: #50fa7b; /* Green */
+    --dark-gray: #282a36; /* Slightly Lighter Dark */
+    --border: #6272a4; /* Border color */
+    --orange :#FFB86C;
+}
+
+/* General Styles */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background);
+    color: var(--foreground);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Preloader Styles */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: var(--background); /* Dark background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.progress-bar-container {
+    width: 80%;
+    height: 5px;
+    background: #444; /* Darker container for contrast */
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: var(--accent); /* Bright color for the progress bar */
+    animation: loading 3s linear infinite;
+}
+
+/* Animation for the Progress Bar */
+@keyframes loading {
+    0% {
+        width: 0%;
+    }
+    50% {
+        width: 50%;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Preloader Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Navbar */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: var(--dark-gray);
+    border-bottom: 2px solid var(--border);
+}
+
+.logo h1 {
+    margin: 0;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.logo p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--secondary);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--foreground);
+    font-size: 1rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: var(--accent);
+}
+
+/* Responsive Navbar */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    color: var(--foreground);
+    cursor: pointer;
+}
+
+/* Sections */
+section {
+    text-align: center;
+    padding: 80px 20px;
+}
+
+/* Home Section */
+.home-section h2 {
+    font-size: 2.5rem;
+    color: var(--secondary);
+}
+
+.home-section p {
+    font-size: 1.2rem;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+    background: var(--accent);
+    color: black;
+    font-size: 1rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--secondary);
+}
+
+/* About Section */
+.about-section {
+    background: var(--dark-gray);
+    padding: 80px 20px;
+}
+.about-page{
+    padding: 0;
+}
+.about-section h2 {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+.about-section p {
+    font-size: 1.1rem;
+    max-width: 700px;
+    margin: auto;
+}
+.cursor {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--accent);
+    animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+    from{
+        display: block;
+    }
+    to{
+        display: none;
+    }
+}
+
+
+/* Projects Section */
+.projects-section {
+    background: var(--background);
+    padding: 80px 20px;
+}
+
+.projects-section h2 {
+    font-size: 2rem;
+    color: var(--accent);
+}
+
+.project-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.project-card {
+    background: var(--dark-gray);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid var(--border);
+    transition: transform 0.3s;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+    border-color: var(--accent);
+}
+
+/* Contact Section */
+.contact-section {
+    background: var(--dark-gray);
+    padding: 80px 20px;
+}
+
+.contact-section h2 {
+    font-size: 2rem;
+    color: var(--primary);
+}
+
+/* Contact Form */
+form {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+input, textarea, button {
+    margin-top: 10px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: var(--background);
+    color: var(--foreground);
+    border: 1px solid var(--border);
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+button {
+    background: var(--accent);
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: var(--primary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: var(--dark-gray);
+    color: white;
+    border-top: 2px solid var(--border);
+    margin-top: 50px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        text-align: center;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        padding: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon.active + nav ul {
+        display: flex;
+    }
+
+    .project-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 50px 10px;
+    background-color: var(--background-light);
+    color: var(#6272A4);
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.skills-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: var(--accent);
+    margin-left: 14px;
+}
+
+.skills-category {
+    margin: 20px 0;
+    padding: 20px;
+    background-color: var(--background-dark);
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skills-category h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.skills-category ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.skills-category ul li {
+    font-size: 1rem;
+    margin: 5px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.skills-category ul li::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+    color:var(--primary);
+    font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 40px 10px;
+    }
+
+    .skills-category h3 {
+        font-size: 1.5rem;
+    }
+
+    .skills-category ul li {
+        font-size: 0.9rem;
+    }
+}
